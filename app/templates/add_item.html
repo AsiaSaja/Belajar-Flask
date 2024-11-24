@@ -1,0 +1,24 @@
+<!-- templates/add_item.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="text-center mb-4">Add New Item</h1>
+
+<!-- Formulir untuk menambahkan item -->
+<form method="POST" action="{{ url_for('add_item') }}">
+    <div class="mb-3">
+        <label for="name" class="form-label">Item Name</label>
+        <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea class="form-control" id="description" name="description" required></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-success">Add Item</button>
+</form>
+
+<!-- Tombol untuk kembali ke daftar item -->
+<a href="{{ url_for('index') }}" class="btn btn-secondary mt-3">Back to Item List</a>
+{% endblock %}
